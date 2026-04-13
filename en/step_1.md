@@ -6,9 +6,14 @@ Use a `for` loop to turn one click into a line of stamps from the cannon to the 
 
 ### Step 1
 
-Open `main.js` in the `stamp-cannon-starter` project and find `fireVolley(targetX, targetY)`. Right now the function places one stamp directly at the pointer, so the click ignores the `stampCount` shown in the HUD.
+Click **Run** and then click around the output to see how the stamp cannon works - right now, you can only make orange stars or press `c` to clear the canvas.
 
 ### Step 2
+
+Open `main.js` in the file menu and find `fireVolley(targetX, targetY)`. 
+Right now the function places one stamp directly at the pointer, so the click ignores the `stampCount` shown in the HUD.
+
+### Step 3
 
 Replace the old single `addStamp(...)` line with a `for` loop. Get the cannon muzzle position first, then use `amount` to move from `0` at the cannon tip to `1` at the pointer, and use `lerpNum(...)` to place each stamp between those two points.
 
