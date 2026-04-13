@@ -1,0 +1,25 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #dbe8ff;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  padding: 16px;
+}
+
+canvas {
+  display: block;
+  width: min(800px, calc(100vw - 32px));
+  height: auto;
+  box-shadow: 0 18px 40px rgba(25, 35, 60, 0.22);
+  touch-action: none;
+}

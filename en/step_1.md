@@ -1,45 +1,44 @@
-## What you will make
-OR
-## What you will do - change meta if you use this
+<h2 class="c-project-heading--task">Fire a Full Volley</h2>
 
-A brief description - one or two sentences. 
+--- task ---
+Use a `for` loop to turn one click into a line of stamps from the cannon to the pointer.
+--- /task ---
 
---- print-only ---
+### Step 1
 
-![ALT TEXT](images/IMAGE.png)
+Open `main.js` in the `stamp-cannon-starter` project and find `fireVolley(targetX, targetY)`. Right now the function places one stamp directly at the pointer, so the click ignores the `stampCount` shown in the HUD.
 
---- /print-only ---
+### Step 2
 
---- no-print ---
+Replace the old single `addStamp(...)` line with a `for` loop. Get the cannon muzzle position first, then use `amount` to move from `0` at the cannon tip to `1` at the pointer, and use `lerpNum(...)` to place each stamp between those two points.
 
-[Editor embed](https://editor.raspberrypi.org/en/embed/viewer/project-slug)
+<div class="c-project-code">
 
---- /no-print ---
+--- code ---
+---
+language: js
+filename: main.js
+line_numbers: true
+line_number_start: 243
+line_highlights: 244,246-251
+--- 
+function fireVolley(targetX, targetY) {
+  const { muzzleX, muzzleY } = getMuzzlePosition(targetX, targetY);
 
---- no-print ---
+  for (let stampIndex = 0; stampIndex < stampCount; stampIndex += 1) {
+    const amount = stampCount === 1 ? 1 : stampIndex / (stampCount - 1);
+    const stampX = lerpNum(muzzleX, targetX, amount);
+    const stampY = lerpNum(muzzleY, targetY, amount);
 
-Video embed
+    addStamp(stampX, stampY, 34, [255, 190, 70], currentShape, 0);
+  }
+}
+--- /code ---
 
-<video width="640" height="360" controls>
-<source src="images/videoname.mp4" type="video/mp4">
-</video>
-
-Youtube embed 
-<html>
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;">
-<iframe style="position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/XXXXXXXXX?rel=0&cc_load_policy=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-</iframe>
-</div><br>
-</html>
-
-Scratch embed
-<div class="scratch-preview">
- <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/XXXXXXXXX/?autostart=false" frameborder="0"></iframe>
 </div>
 
---- /no-print ---
+<h2 class="c-project-heading--task">Test</h2>
 
-### You will need:
-- a
-- b
-- c
+--- task ---
+Set the count to 3 and click once, then set it to 8 and click again; each click should create a line of stamps that matches the number shown in the HUD.
+--- /task ---

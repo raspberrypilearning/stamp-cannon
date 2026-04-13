@@ -1,14 +1,18 @@
-title: Project title in sentence case
+title: Stamp Cannon
+landing: true
 hero_image: images/banner.png
-description: A short description of the project
+description: Fire colourful stamped shapes from a cannon and change the volley with the mouse and keyboard.
 listed: false
 pdf: false
 steps:
-  - title: What you will make
-  - title: Step title
+  - title: Fire a Full Volley
+  - title: Change Stamp Size
     completion:
-      - engaged      
-  - title: Challenge
-    challenge: true
+      - engaged
+  - title: Colour the Volley
+  - title: Switch Shape Controls
+    completion:
+      - internal
+  - title: Rotate Each Stamp
     completion:
       - external
