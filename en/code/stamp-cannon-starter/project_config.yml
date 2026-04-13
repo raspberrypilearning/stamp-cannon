@@ -1,1 +1,5 @@
+
+name: "Stamp cannon"
+identifier: "stamp-cannon-starter"
+type: 'html'
 build: true
